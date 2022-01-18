@@ -3,8 +3,10 @@ import processing.core.PImage;
 
 public class Sketch2 extends PApplet {
 PImage Background;
+PImage Settings; 
 
   boolean background = true;
+  
 
   public void settings() {
 	  // put your size call here
@@ -13,19 +15,34 @@ PImage Background;
 
   
   public void setup(){
-    size(1200,900);
-    Background = loadImage("../assets/CPTBackground.jpg");
+    
   }
   
   public void draw() {   
-    ellipse(100,100,400,400);
+    size(1200,900);
+    Background = loadImage("../assets/CPTBackground.jpg");
     
-    rect(300,250,150,50);
-    rect(300,325,150,50);
-    rect(300,400,150,50);
-
     background(0);
     image(Background, 0, 0);
+    
+    fill(38, 38, 36);
+    ellipse(250,250,750,750);
+    
+    
+    fill(30, 166, 37);
+    rect(800,100,300,200);
+    
+    fill(30, 166, 37);
+    rect(800,350,300,200);
+    
+    // settings button
+    size(300,300);
+    Settings = loadImage("../assets/126472.png");
+    
+
+    fill(30, 166, 37);
+    rect(800,600,300,200);
+    
   }
 
 boolean isMouseOver(int x, int y, int w, int h){
