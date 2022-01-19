@@ -6,17 +6,17 @@ public class Sketch2 extends PApplet {
   PImage Settings; 
 
   public void settings() {
-    size(1200, 900);
+    size(1080, 1080);
   }
 
   public void setup(){
-   Background = loadImage("../assets/CPTBackground.jpg");
+   Background = loadImage("../assets/galaxybg.jpg");
    Settings = loadImage("../assets/126472.png");
 
   }
   
   public void draw() {   
-    image(Background, 0, 0);
+    image(Background,0,0);
     
     fill(30, 166, 37);
     rect(800,600,300,200); 
