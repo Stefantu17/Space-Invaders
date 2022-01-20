@@ -11,9 +11,9 @@ public class Sketch2 extends PApplet {
   }
 
   public void setup(){
-  background = loadImage("../assets/stars.jpg");
+  background = loadImage("../assets/background.jpg");
   background.resize(600, 600);
-  settings = loadImage("../assets/126472.png");
+  settings = loadImage("../assets/settings.png");
   settings.resize(75, 75);
   play = loadImage("../assets/playbutton.png");
   play.resize(75, 75);
@@ -24,7 +24,7 @@ public class Sketch2 extends PApplet {
     
     fill(255, 255, 255);
     rect(325,150,200,100); 
-    image(play, 0, 0);
+    image(play, 390, 165);
 
     fill(255, 255, 255);
     ellipse(100,100,350,350);
