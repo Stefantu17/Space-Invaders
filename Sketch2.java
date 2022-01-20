@@ -2,33 +2,38 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 public class Sketch2 extends PApplet {
-  PImage Background;
-  PImage Settings; 
+  PImage background;
+  PImage settings;
+  PImage play; 
 
   public void settings() {
-    size(1200, 900);
+    size(600, 600);
   }
 
   public void setup(){
-   Background = loadImage("../assets/CPTBackground.jpg");
-   Settings = loadImage("../assets/126472.png");
-
+  background = loadImage("../assets/stars.jpg");
+  background.resize(600, 600);
+  settings = loadImage("../assets/126472.png");
+  settings.resize(75, 75);
+  play = loadImage("../assets/playbutton.png");
+  play.resize(75, 75);
   }
   
   public void draw() {   
-    image(Background, 0, 0);
+    image(background, 0, 0);
     
-    fill(30, 166, 37);
-    rect(800,600,300,200); 
-    image(Settings, 600, 450); 
+    fill(255, 255, 255);
+    rect(325,150,200,100); 
+    image(play, 0, 0);
+
+    fill(255, 255, 255);
+    ellipse(100,100,350,350);
     
-    fill(38, 38, 36);
-    ellipse(250,250,750,750);
+    fill(255, 255, 255);
+    rect(325,275,200,100);
+    image(settings, 387, 286); 
     
-    fill(30, 166, 37);
-    rect(800,100,300,200);
-    
-    fill(30, 166, 37);
-    rect(800,350,300,200);
+    fill(255, 255, 255);
+    rect(325,400,200,100);
   }
 }
