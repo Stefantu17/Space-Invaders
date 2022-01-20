@@ -10,17 +10,21 @@ public class Sketch2 extends PApplet {
     size(600, 600);
   }
 
-  public void setup(){
-  background = loadImage("../assets/background.jpg");
-  background.resize(600, 600);
-  settings = loadImage("../assets/settings.png");
-  settings.resize(75, 75);
-  play = loadImage("../assets/playbutton.png");
-  play.resize(75, 75);
-  }
+  public void setup() {
+    background = loadImage("../assets/background.jpg");
+    background.resize(600, 600);
+    settings = loadImage("../assets/settings.png");
+    settings.resize(75, 75);
+    play = loadImage("../assets/playbutton.png");
+    play.resize(75, 75);
+   }
   
   public void draw() {   
-    image(background, 0, 0);
+    image(Background,0,0);
+    
+    fill(30, 166, 37);
+    rect(800,600,300,200); 
+    image(Settings, 600, 450); 
     
     fill(255, 255, 255);
     rect(325,150,200,100); 
