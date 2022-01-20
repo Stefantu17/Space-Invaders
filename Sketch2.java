@@ -14,18 +14,18 @@ public class Sketch2 extends PApplet {
   }
 
   public void setup(){
-  background = loadImage("../assets/background.jpg");
-  background.resize(600, 600);
-  settings = loadImage("../assets/settings.png");
-  settings.resize(75, 75);
-  play = loadImage("../assets/playbutton.png");
-  play.resize(75, 75);
-  quit = loadImage("../assets/powerbutton.png");
-  quit.resize(75, 75);
-  spaceinvasion = loadImage("../assets/spaceinvasion.png");
-  spaceinvasion.resize(200, 150);
-  credits = loadImage("../assets/credits.png");
-  credits.resize(500, 25);
+    background = loadImage("../assets/background.jpg");
+    background.resize(600, 600);
+    settings = loadImage("../assets/settings.png");
+    settings.resize(75, 75);
+    play = loadImage("../assets/playbutton.png");
+    play.resize(75, 75);
+    quit = loadImage("../assets/powerbutton.png");
+    quit.resize(75, 75);
+    spaceinvasion = loadImage("../assets/spaceinvasion.png");
+    spaceinvasion.resize(200, 150);
+    credits = loadImage("../assets/credits.png");
+    credits.resize(500, 25);
   }
   
   public void draw() {   
