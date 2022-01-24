@@ -73,8 +73,8 @@ public class Sketch2 extends PApplet {
     }
 
     // exit button press
-    if ((mouseX >= 325 && mouseX <= 200) && (mouseY >= 400 && mouseY <= 100)){
-      onExit = true;
+    if ((mouseX >= 325 && mouseX <= 525) && (mouseY >= 400 && mouseY <= 500)){
+      exit();
     }
   }
 }
