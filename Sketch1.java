@@ -4,10 +4,14 @@ import processing.core.PImage;
 public class Sketch1 extends PApplet {
 
   public PImage ship;
+  public PImage alien;
   public float shipX = 300;
+  public float[][][] alienArmy = new float[3][5][2];
   public boolean bulletActive = false;
   public float bulletX;
   public float bulletY = 490;
+  public float xDistance = 0;
+  public float yDistance = 0;
 
   public void settings() {
     size(600, 600);
@@ -17,9 +21,27 @@ public class Sketch1 extends PApplet {
     background(0);
     ship = loadImage("../assets/ship.png");
     ship.resize(50,50);
+    alien = loadImage("../assets/alien.png");
+    alien.resize(50,50);
+
+    for (int i = 0; i < alienArmy.length; i++) {
+      for (int j = 0; j < alienArmy[i].length; j++) {
+        alienArmy[i][j][0] = 75 + xDistance;
+        xDistance += 100;
+      } 
+      xDistance = 0;
+    }
+
+    for (int i = 0; i < alienArmy.length; i++) {
+      for (int j = 0; j < alienArmy[i].length; j++) {
+        alienArmy[i][j][1] = 150 + yDistance;
+      } 
+      yDistance += 100;
+    }
   }
 
   public void draw() {
+    
     // Redraw Background
     background(0);
 
@@ -34,6 +56,13 @@ public class Sketch1 extends PApplet {
         bulletActive = false;
       }
     }
+
+    for (float[][] row : alienArmy) {
+      for (float[] column : row) {
+        image(alien, column[0], column[1]);
+      }
+    }
+
   }
 
   public void keyPressed() {
