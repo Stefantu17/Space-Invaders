@@ -15,6 +15,7 @@ public class Sketch2 extends PApplet {
   public boolean onPlay = false;
   public boolean onSettings = false;
   public boolean onExit = false;
+  public boolean powerupson = false;
   
   public void settings() {
     size(600, 600);
@@ -101,8 +102,13 @@ public class Sketch2 extends PApplet {
       redraw();
       noLoop();
     }
+
+    // power ups button press
+    if ((mouseX >= 75 && mouseX <= 275) && (mouseY >= 75 && mouseY <= 125)){
+      powerupson = true;
+    }
     
-      // exit button press
+    // exit button press
     if ((mouseX >= 325 && mouseX <= 525) && (mouseY >= 400 && mouseY <= 500)){
       exit();
 
