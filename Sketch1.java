@@ -1,11 +1,12 @@
 import processing.core.PApplet;
 import processing.core.PImage;
+import java.util.Arrays;
 
 public class Sketch1 extends PApplet {
 
   public PImage ship;
   public PImage alien;
-  public float shipX = 300;
+  public float shipX = 275;
   public float[][][] alienArmy = new float[3][5][2];
   public boolean bulletActive = false;
   public float bulletX;
@@ -15,6 +16,7 @@ public class Sketch1 extends PApplet {
   public float moving = 0;
   public boolean left;
   public boolean right = true;
+  public boolean reset = false;
 
   public void settings() {
     size(600, 600);
@@ -54,15 +56,34 @@ public class Sketch1 extends PApplet {
     // Draw Bullet
     if (bulletActive == true) {
       bullet();
-      if (bulletY == -10) {
+      if (bulletY <= -10) {
         bulletY = 490;
         bulletActive = false;
       }
     }
 
-    for (float[][] row : alienArmy) {
-      for (float[] column : row) {
-        image(alien, column[0]  + moving, column[1]);
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 5; j++) {
+        if (i == 0 || i == 2) {
+          if ((bulletX >= alienArmy[i][j][0] + moving && bulletX <= alienArmy[i][j][0] + 50 + moving) && (bulletY == alienArmy[i][j][1])) {
+            alienArmy[i][j][0] = -50;
+            alienArmy[i][j][1] = -50;
+            bulletY -= 1000;
+          }
+          else {
+            image(alien, alienArmy[i][j][0]  + moving, alienArmy[i][j][1]);
+          }
+        }
+        else {
+          if ((bulletX >= alienArmy[i][j][0] - moving && bulletX <= alienArmy[i][j][0] + 50 - moving) && (bulletY == alienArmy[i][j][1])) {
+            alienArmy[i][j][0] = -50;
+            alienArmy[i][j][1] = -50;
+            bulletY -= 1000;
+          }
+          else {
+            image(alien, alienArmy[i][j][0] - moving, alienArmy[i][j][1]);
+          }
+        }
       }
       if (moving == 25){      
         left = true;
@@ -78,6 +99,10 @@ public class Sketch1 extends PApplet {
       else if (left == true) {
         moving -= 0.25;
       }
+    }
+    if ((Arrays.deepEquals(alienArmy[0], alienArmy[1])) && (Arrays.deepEquals(alienArmy[1], alienArmy[2]))) {
+      respawn();
+      bulletY -= 1000;
     }
   }
 
@@ -105,5 +130,24 @@ public class Sketch1 extends PApplet {
     fill(255);
     rect(bulletX, bulletY, 10, 10);
     bulletY -= 5;
+  }
+
+  public void respawn() {
+    xDistance = 0;
+    yDistance = 0;
+    for (int i = 0; i < alienArmy.length; i++) {
+      for (int j = 0; j < alienArmy[i].length; j++) {
+        alienArmy[i][j][0] = 75 + xDistance;
+        xDistance += 100;
+      } 
+      xDistance = 0;
+    }
+
+    for (int i = 0; i < alienArmy.length; i++) {
+      for (int j = 0; j < alienArmy[i].length; j++) {
+        alienArmy[i][j][1] = 150 + yDistance;
+      } 
+      yDistance += 100;
+    }
   }
 }
