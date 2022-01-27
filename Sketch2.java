@@ -2,11 +2,6 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 public class Sketch2 extends PApplet {
-<<<<<<< Updated upstream
-  // setting image variables
-  PImage background;
-  
-=======
 
   /** 
   * Menu design
@@ -15,7 +10,6 @@ public class Sketch2 extends PApplet {
 
   // setting image variables
   PImage background;
->>>>>>> Stashed changes
   PImage play; 
   PImage quit;
   PImage spaceinvasion;
@@ -46,44 +40,31 @@ public class Sketch2 extends PApplet {
   }
   
   public void draw() {  
-    // background and credits 
-
-    background(87);
-
-    fill(255, 255, 255);
-    rect(110, 150, 200, 100);
-
+    
+    // Background and credits 
     image(background, 0, 0);
     image(credits, 5, 550);
     
-    // play button
+    // Play button
     fill(255, 255, 255);
     rect(325,150,200,100); 
     image(play, 390, 165);
 
-<<<<<<< Updated upstream
-    // game logo
-=======
     // Game title
->>>>>>> Stashed changes
     fill(255, 255, 255);
     ellipse(100,100,350,350);
     image(spaceinvasion, 25, 50);
-    
-<<<<<<< Updated upstream
-    // exit button
-=======
+
     // Exit button
->>>>>>> Stashed changes
     fill(255, 255, 255);
     rect(325,300,200,100);
     image(quit, 387, 313);  
   }
 
   public void mousePressed() {
+    
     // play button press
     if ((mouseX >= 325 && mouseX <= 525) && (mouseY >= 150 && mouseY <= 250)){
-      System.out.println("hello world");
       onPlay = true;
     }
     
