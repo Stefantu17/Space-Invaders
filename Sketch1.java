@@ -5,13 +5,18 @@ import java.util.Arrays;
 
 public class Sketch1 extends PApplet {
 
+  /** 
+  * Game design
+  * @author Stefan. T
+  */
+
   // Global variables
   public PImage ship;
   public PImage alien;
   public PImage alienUp;
   public PFont font; 
   public int seconds;
-  public int score;
+  public int score = 0;
   public int lives = 3;
   public float shipX = 275;
   public float bulletX;

@@ -2,9 +2,20 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 public class Sketch2 extends PApplet {
+<<<<<<< Updated upstream
   // setting image variables
   PImage background;
   
+=======
+
+  /** 
+  * Menu design
+  * @author John. M
+  */
+
+  // setting image variables
+  PImage background;
+>>>>>>> Stashed changes
   PImage play; 
   PImage quit;
   PImage spaceinvasion;
@@ -50,12 +61,20 @@ public class Sketch2 extends PApplet {
     rect(325,150,200,100); 
     image(play, 390, 165);
 
+<<<<<<< Updated upstream
     // game logo
+=======
+    // Game title
+>>>>>>> Stashed changes
     fill(255, 255, 255);
     ellipse(100,100,350,350);
     image(spaceinvasion, 25, 50);
     
+<<<<<<< Updated upstream
     // exit button
+=======
+    // Exit button
+>>>>>>> Stashed changes
     fill(255, 255, 255);
     rect(325,300,200,100);
     image(quit, 387, 313);  
