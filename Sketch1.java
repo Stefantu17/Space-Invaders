@@ -12,6 +12,9 @@ public class Sketch1 extends PApplet {
   public float bulletY = 490;
   public float xDistance = 0;
   public float yDistance = 0;
+  public float moving = 0;
+  public boolean left;
+  public boolean right = true;
 
   public void settings() {
     size(600, 600);
@@ -59,10 +62,23 @@ public class Sketch1 extends PApplet {
 
     for (float[][] row : alienArmy) {
       for (float[] column : row) {
-        image(alien, column[0], column[1]);
+        image(alien, column[0]  + moving, column[1]);
+      }
+      if (moving == 25){      
+        left = true;
+        right = false;
+      }
+      else if (moving == -25) {
+        right = true;
+        left = false;
+      }
+      if (right == true) {
+        moving += 0.25;
+      }
+      else if (left == true) {
+        moving -= 0.25;
       }
     }
-
   }
 
   public void keyPressed() {

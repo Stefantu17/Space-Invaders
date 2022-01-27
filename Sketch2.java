@@ -11,8 +11,7 @@ public class Sketch2 extends PApplet {
 
   public void setup(){
    Background = loadImage("../assets/CPTBackground.jpg");
-   Settings = loadImage("../assets/126472.png");
-
+   Settings = loadImage("../assets/settings.png");
   }
   
   public void draw() {   
