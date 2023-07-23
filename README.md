@@ -1,8 +1,6 @@
 # Space Invaders
 <p align="center">
   <img src="https://i.ibb.co/82G9qSB/Space-Invader-removebg-preview.png" />
- 
-This game was created as my grade 11 computer science summative assignment.
 
 ## Objective 
 Our game will be our version of the classic game [Space Invaders](https://en.wikipedia.org/wiki/Space_Invaders). The premise of the game is to be able to destroy all the enemy space invaders while dodging their attacks and maintaining up to 3 lives. The game will have user input that includes mouse clicks to start the game and arrow keys to control your ship. Players will be able to move and shoot simultaneously.
@@ -15,4 +13,6 @@ Scoring is tallied on how many enemy space invaders you destory. The more you de
 
 ## Limitations
 Some limiations to our program include only being able to shoot 1 bullet at a time, enemy can only counterattack with 1 bullet back, and only 1 respawn pattern for the aliens. 
+
+### This game was created as my grade 11 computer science summative assignment.
 </p>
