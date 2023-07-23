@@ -1,7 +1,7 @@
 # Space Invaders
 <p align="center">
   <img src="https://i.ibb.co/82G9qSB/Space-Invader-removebg-preview.png" />
-
+ 
 This game was created as my grade 11 computer science summative assignment.
 
 ## Objective 
